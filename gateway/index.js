@@ -134,7 +134,7 @@ app.get('/health', async (request, reply) => {
     }
   }
 
-  const allUp = Object.values(results).every(r => r.status === 'up');
+  const allUp = Object.values(results).every(r => r.status === 'ok');
 
   return reply.code(allUp ? 200 : 503).send({
     service: 'gateway',
